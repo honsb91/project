@@ -1,0 +1,40 @@
+package kr.hospital.model;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
+public class PatientVO {
+	
+	// 환자 id
+	private String patient_id;
+	// 환자 pw
+	private String patient_pw;
+	// 환자 이름
+	private String patient_name;
+	// 환자 전화번호
+	private String patient_phone;
+	// 환자 생일
+	private String patient_birth;
+	// 환자 우편주소
+	private String patient_addr1;
+	// 환자 기본주소
+	private String patient_addr2;
+	// 환자 상세주소
+	private String patient_addr3;
+	// 환자 성별
+	private String patient_gender;
+	// 환자 혈액형
+	private String patient_blood;
+	
+	@Override
+	public String toString() {
+		return "PatientVO [patient_id=" + patient_id + ", patient_pw=" + patient_pw + ", patient_name=" + patient_name
+				+ ", patient_phone=" + patient_phone + ", patient_birth=" + patient_birth + ", patient_addr1="
+				+ patient_addr1 + ", patient_addr2=" + patient_addr2 + ", patient_addr3=" + patient_addr3
+				+ ", patient_gender=" + patient_gender + ", patient_blood=" + patient_blood + "]";
+	}
+	
+	
+
+}

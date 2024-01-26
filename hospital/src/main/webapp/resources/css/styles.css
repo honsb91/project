@@ -587,8 +587,8 @@ progress {
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  max-width: 105%;
+  height: 100%;
 }
 
 .img-thumbnail {
@@ -7023,9 +7023,9 @@ textarea.form-control-lg {
   max-height: 100% !important;
 }
 
-.vh-100 {
+/* .vh-100 {
   height: 100vh !important;
-}
+} */
 
 .min-vh-100 {
   min-height: 100vh !important;
@@ -8851,7 +8851,7 @@ textarea.form-control-lg {
     padding: 1.5rem !important;
   }
   .p-md-5 {
-    padding: 3rem !important;
+    padding: 6rem !important;
   }
   .px-md-0 {
     padding-right: 0 !important;

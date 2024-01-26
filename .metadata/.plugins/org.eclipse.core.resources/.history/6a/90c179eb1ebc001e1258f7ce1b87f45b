@@ -1,0 +1,20 @@
+package kr.co.test;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import kr.hospital.mapper.PatientMapper;
+import kr.hospital.model.PatientVO;
+
+public class PatinetMapperTest {
+	
+	@Autowired
+	private PatientMapper patientMapper;
+	
+	@Test
+	public void patientJoin() throws Exception{
+		
+		PatientVO patient = new PatientVO();
+	}
+
+}

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+/* 페이지 로고 */
+.logo_wrap{
+	text-align: center;	
+	margin: 150px 0;	
+}
+.logo_wrap>span{
+	font-size : 50px;
+	font-weight: 900;
+}
