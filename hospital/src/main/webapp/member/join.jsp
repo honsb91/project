@@ -6,10 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
+<link rel="stylesheet" href="/resources/css/member/join.css">
 </head>
 <%@ include file="/include/header.jsp"%>
 <body>
 <section class="h-100">
+<form id="join_form" method="post">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col">
@@ -28,45 +30,64 @@
                 <div class="row">
                   <div class="col-md-9 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1m" class="form-control form-control-lg" placeholder="아이디" />
+                      <input type="text" name="patient_id" id="id_input" class="form-control form-control-lg" placeholder="아이디" />
                     </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-9 mb-4">
-                    <div class="form-outline">
-                      <input type="password" id="form3Example1m1" class="form-control form-control-lg" placeholder="비밀번호"/>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-9 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1m1" class="form-control form-control-lg" placeholder="이름"/>
-                    </div>
+                    <span class="id_input_re_1">사용 가능한 아이디입니다.</span>
+					<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
+					<span class="final_id_ck">아이디를 입력해주세요.</span>
                   </div>
                 </div>
                 
                 <div class="row">
                   <div class="col-md-9 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1m1" class="form-control form-control-lg" placeholder="전화번호"/>
+                      <input type="password" name="patient_pw" id="form3Example1m1" class="form-control form-control-lg" placeholder="비밀번호"/>
                     </div>
+                    <span class="final_pw_ck">비밀번호를 입력해주세요.</span>
                   </div>
                 </div>
                 
                 <div class="row">
                   <div class="col-md-9 mb-4">
                     <div class="form-outline">
-                      <input type="date" id="form3Example1m1" class="form-control form-control-lg" />
+                      <input type="password" name="patient_pw_chk" id="form3Example1m1" class="form-control form-control-lg" placeholder="비밀번호 확인"/>
                     </div>
+                    <span class="final_pwck_ck">비밀번호 확인을 입력해주세요.</span>
+                    <span class="pwck_input_re_1">비밀번호가 일치합니다.</span>
+                	<span class="pwck_input_re_2">비밀번호가 일치하지 않습니다.</span>
                   </div>
                 </div>
+                
+                <div class="row">
+                  <div class="col-md-9 mb-4">
+                    <div class="form-outline">
+                      <input type="text" name="patient_name" id="form3Example1m1" class="form-control form-control-lg" placeholder="이름"/>
+                    </div>
+                    <span class="final_name_ck">이름을 입력해주세요.</span>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-9 mb-4">
+                    <div class="form-outline">
+                      <input type="text" name="patient_phone" id="form3Example1m1" class="form-control form-control-lg" placeholder="전화번호"/>
+                    </div>
+                    <span class="final_phone_ck">전화번호를 입력해주세요.</span>
+                  </div>
+                </div>
+                
+                <div class="row">
+  					<div class="col-md-9 mb-4">
+    					<div class="form-outline">
+      						<input type="date" name="patient_birth" id="form3Example1m1" class="form-control form-control-lg" placeholder="생년월일을 입력해주세요" />
+    					</div>
+  					</div>
+				</div>
                 
                 <div class="row">
     				<div class="col-md-5 mb-4">
         				<div class="form-outline">
-            				<input type="text" name="patient_addr1" class="form-control form-control-lg" readonly="readonly" placeholder="주소"/>
+            				<input type="text" name="patient_address1" class="form-control form-control-lg" readonly="readonly" placeholder="주소"/>
         				</div>
     				</div>
     				<div class="col-md-5 mb-4">
@@ -75,49 +96,52 @@
 				</div>
                 
                 <div class="form-outline mb-4">
-                  <input type="text" name="patient_addr2" class="form-control form-control-lg" readonly="readonly" placeholder="기본주소"/>
+                  <input type="text" name="patient_address2" class="form-control form-control-lg" readonly="readonly" placeholder="기본주소"/>
                 </div>
                 
                 <div class="form-outline mb-4">
-                  <input type="text" name="patient_addr3" class="form-control form-control-lg" readonly="readonly" placeholder="나머지주소"/>
+                  <input type="text" name="patient_address3" class="form-control form-control-lg" readonly="readonly" placeholder="나머지주소"/>
+                  <span class="final_addr_ck">주소를 입력해주세요.</span>
                 </div>
 
               <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-  <h5 class="mb-0 me-4">성별 : </h5>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="gender" id="femaleGender" value="female" />
-    <label class="form-check-label" for="femaleGender">남</label>
-  </div>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="gender" id="maleGender" value="male" />
-    <label class="form-check-label" for="maleGender">여</label>
-  </div>
-</div>
+  					<h5 class="mb-0 me-4">성별 : </h5>
+  					<div class="form-check form-check-inline mb-0 me-4">
+    					<input class="form-check-input" type="radio" name="patient_gender" id="femaleGender" value="female" />
+    					<label class="form-check-label" for="femaleGender">남</label>
+  					</div>
+  			  		<div class="form-check form-check-inline mb-0 me-4">
+    					<input class="form-check-input" type="radio" name="patient_gender" id="maleGender" value="male" />
+    					<label class="form-check-label" for="maleGender">여</label>
+  					</div>
+			  </div>
 
-<div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-  <h5 class="mb-0 me-4">혈액형 : </h5>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="bloodType" id="bloodTypeA" value="A" />
-    <label class="form-check-label" for="bloodTypeA">A</label>
-  </div>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="bloodType" id="bloodTypeB" value="B" />
-    <label class="form-check-label" for="bloodTypeB">B</label>
-  </div>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="bloodType" id="bloodTypeO" value="O" />
-    <label class="form-check-label" for="bloodTypeO">O</label>
-  </div>
-  <div class="form-check form-check-inline mb-0 me-4">
-    <input class="form-check-input" type="radio" name="bloodType" id="bloodTypeAB" value="AB" />
-    <label class="form-check-label" for="bloodTypeAB">AB</label>
-  </div>
-</div>
+			  <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+  				<h5 class="mb-0 me-4">혈액형 : </h5>
+  				<div class="form-check form-check-inline mb-0 me-4">
+    				<input class="form-check-input" type="radio" name="patient_blood" id="bloodTypeA" value="A" />
+    				<label class="form-check-label" for="bloodTypeA">A</label>
+  				</div>
+  				
+  			    <div class="form-check form-check-inline mb-0 me-4">
+    				<input class="form-check-input" type="radio" name="patient_blood" id="bloodTypeB" value="B" />
+    				<label class="form-check-label" for="bloodTypeB">B</label>
+  				</div>
+  				
+  				<div class="form-check form-check-inline mb-0 me-4">
+    				<input class="form-check-input" type="radio" name="patient_blood" id="bloodTypeO" value="O" />
+    				<label class="form-check-label" for="bloodTypeO">O</label>
+  				</div>
+  				
+  				<div class="form-check form-check-inline mb-0 me-4">
+    				<input class="form-check-input" type="radio" name="patient_blood" id="bloodTypeAB" value="AB" />
+    				<label class="form-check-label" for="bloodTypeAB">AB</label>
+  				</div>
+			  </div>
 
                 <div class="d-flex justify-content-end pt-3">
-                  <button type="button" class="btn btn-primary btn-lg ms-2">회원가입</button>
+                  <button type="button" name="join_button" class="btn btn-primary btn-lg ms-2">회원가입</button>
                 </div>
-
               </div>
             </div>
           </div>
@@ -125,13 +149,30 @@
       </div>
     </div>
   </div>
+  </form>
 </section>
 </body>
 <%@ include file="/include/footer.jsp"%>
 <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
 
 <script>
+
+/* 유효성 검사 통과유무 변수 */
+
+var idCheck = false;            // 아이디
+var idckCheck = false;            // 아이디 중복 검사
+var pwCheck = false;            // 비번
+var pwckCheck = false;            // 비번 확인
+var pwckcorCheck = false;        // 비번 확인 일치 확인
+var nameCheck = false;            // 이름
+var phoneCheck = false;				// 전화번호
+var addressCheck = false         // 주소
+
+
 /* 다음 주소 연동 */
 function execution_daum_address(){
  
@@ -172,13 +213,139 @@ function execution_daum_address(){
             	addr += ' ';
             }
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
-            $("[name=patient_addr1]").val(data.zonecode);    // 대체가능
-            $("[name=patient_addr2]").val(addr);            // 대체가능
+            $("[name=patient_address1]").val(data.zonecode);    // 대체가능
+            $("[name=patient_address2]").val(addr);            // 대체가능
             // 상세주소 입력란 disabled 속성 변경 및 커서를 상세주소 필드로 이동한다.
-            $("[name=patient_addr3]").attr("readonly",false);
-            $("[name=patient_addr3]").focus();
+            $("[name=patient_address3]").attr("readonly",false);
+            $("[name=patient_address3]").focus();
         }
     }).open();    
 }
+
+/* 비밀번호 확인 일치 유효성 검사 */
+
+$('[name=patient_pw_chk]').on("propertychange change keyup paste input", function(){
+ 
+    var pw = $('[name=patient_pw]').val();
+    var pwck = $('[name=patient_pw_chk]').val();
+    $('.final_pwck_ck').css('display', 'none');
+ 
+    if(pw == pwck){
+        $('.pwck_input_re_1').css('display','block');
+        $('.pwck_input_re_2').css('display','none');
+        pwckcorCheck = true;
+    }else{
+        $('.pwck_input_re_1').css('display','none');
+        $('.pwck_input_re_2').css('display','block');
+        pwckcorCheck = false;
+    }        
+    
+});
+
+/* 회원가입 기능 작동관련 로직 */
+	$(document).ready(function(){
+	//회원가입 버튼(회원가입 기능 작동)
+	$("[name=join_button]").click(function(){
+		
+		/* 입력값 변수 */
+        var id = $('[name=patient_id]').val();            // id 입력란
+        var pw = $('[name=patient_pw]').val();            // 비밀번호 입력란
+        var pwck = $('[name=patient_pw_chk]').val();      // 비밀번호 확인 입력란
+        var name = $('[name=patient_name]').val();        // 이름 입력란
+        var phone = $('[name=patient_phone]').val();        // 전화번호 입력란
+        var addr = $('[name=patient_address3]').val();    // 주소 입력란
+        
+        /* 아이디 유효성검사 */
+        if(id == ""){
+            $('.final_id_ck').css('display','block');
+            idCheck = false;
+        }else{
+            $('.final_id_ck').css('display', 'none');
+            idCheck = true;
+        }
+        
+        /* 비밀번호 유효성 검사 */
+        if(pw == ""){
+            $('.final_pw_ck').css('display','block');
+            pwCheck = false;
+        }else{
+            $('.final_pw_ck').css('display', 'none');
+            pwCheck = true;
+        }
+        
+        /* 비밀번호 확인 유효성 검사 */
+        if(pwck == ""){
+            $('.final_pwck_ck').css('display','block');
+            pwckCheck = false;
+        }else{
+            $('.final_pwck_ck').css('display', 'none');
+            pwckCheck = true;
+        } 
+        
+        /* 이름 유효성 검사 */
+        if(name == ""){
+            $('.final_name_ck').css('display','block');
+            nameCheck = false;
+        }else{
+            $('.final_name_ck').css('display', 'none');
+            nameCheck = true;
+        }
+        
+        /* 전화번호 유효성 검사 */
+        if(name == ""){
+            $('.final_phone_ck').css('display','block');
+            nameCheck = false;
+        }else{
+            $('.final_phone_ck').css('display', 'none');
+            nameCheck = true;
+        }
+        
+        /* 주소 유효성 검사 */
+        if(addr == ""){
+            $('.final_addr_ck').css('display','block');
+            addressCheck = false;
+        }else{
+            $('.final_addr_ck').css('display', 'none');
+            addressCheck = true;
+        }
+        
+        /* 최종 유효성 검사 */
+        if(idCheck&&idckCheck&&pwCheck&&pwckCheck&&pwckcorCheck&&nameCheck&&phoneCheck&&addressCheck ){
+
+    		$("#join_form").attr("action", "/member/join");
+    		$("#join_form").submit();
+        } 
+        
+        return false;
+	});
+});
+
+/* 아이디 중복검사 로직 */
+//아이디 중복검사
+$('#id_input').on("propertychange change keyup paste input", function(){
+	
+	var patient_id = $('#id_input').val(); // #id_input에 입력되는 값
+	var data = {patient_id : patient_id}   // 컨트롤에 넘길 데이터 이름 : 데이터(#id_input에 입력되는 값)
+	
+	$.ajax({
+		type : "post",
+		url : "/member/patientIdChk",
+		data : data,
+		success : function(result){
+			if(result != 'fail'){
+				$('.id_input_re_1').css("display","inline-block");
+				$('.id_input_re_2').css("display", "none");
+				// 아이디 중복이 없는 경우
+				idckCheck = true;
+			} else {
+				$('.id_input_re_2').css("display","inline-block");
+				$('.id_input_re_1').css("display", "none");	
+				// 아이디 중복된 경우
+				idckCheck = false;
+			}
+		} // success 종료
+	}); // ajax 종료
+});
+
 </script>
 </html>

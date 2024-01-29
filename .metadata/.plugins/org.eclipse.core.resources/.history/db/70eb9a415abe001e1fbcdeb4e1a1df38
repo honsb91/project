@@ -1,0 +1,10 @@
+package kr.hospital.service;
+
+import kr.hospital.model.PatientVO;
+
+public interface PatientService {
+	
+	// 회원가입 로직
+	public void patientJoin(PatientVO patient) throws Exception;
+
+}

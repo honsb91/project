@@ -1,10 +1,10 @@
 package kr.hospital.model;
 
+
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@Getter @Setter @ToString
+@Getter @Setter
 public class PatientVO {
 	
 	// 환자 id
@@ -15,16 +15,21 @@ public class PatientVO {
 	private String patient_name;
 	// 환자 전화번호
 	private String patient_phone;
-	// 환자 생일
+	// 환자 생년월일
 	private String patient_birth;
 	// 환자 우편주소
-	private String patient_addr1;
+	private String patient_address1;
 	// 환자 기본주소
-	private String patient_addr2;
+	private String patient_address2;
 	// 환자 상세주소
-	private String patient_addr3;
+	private String patient_address3;
 	// 환자 성별
 	private String patient_gender;
 	// 환자 혈액형
 	private String patient_blood;
+	
+	
+	
+	
+	
 }
