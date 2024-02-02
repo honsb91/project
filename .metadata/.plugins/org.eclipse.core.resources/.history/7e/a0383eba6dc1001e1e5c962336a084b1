@@ -1,0 +1,20 @@
+package kr.hospital.model;
+
+public class NoticeVO {
+	
+	// 공지사항 번호
+	private int notice_bno;
+	
+	// 공지사항 제목
+	private String notice_title;
+	
+	// 공지사항 내용
+	private String notice_content;
+	
+	// 공지사항 등록일
+	private Date notice_regdate;
+	
+	// 공지사항 작성자
+	private String notice_writer;
+
+}

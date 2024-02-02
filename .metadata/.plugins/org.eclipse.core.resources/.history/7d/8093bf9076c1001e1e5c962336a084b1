@@ -1,0 +1,18 @@
+package kr.hospital.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import kr.hospital.mapper.NoticeMapper;
+import kr.hospital.model.NoticeVO;
+
+public class NoticeServiceImpl implements NoticeService{
+	
+	@Autowired
+	NoticeMapper noticeMapper;
+
+	@Override
+	public void registr(NoticeVO notice) throws Exception {
+		
+	}
+
+}

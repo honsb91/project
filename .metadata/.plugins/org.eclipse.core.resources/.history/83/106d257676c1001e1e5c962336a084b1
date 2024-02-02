@@ -1,0 +1,12 @@
+package kr.hospital.service;
+
+import kr.hospital.model.NoticeVO;
+
+public class NoticeServiceImpl implements NoticeService{
+
+	@Override
+	public void registr(NoticeVO notice) throws Exception {
+		
+	}
+
+}

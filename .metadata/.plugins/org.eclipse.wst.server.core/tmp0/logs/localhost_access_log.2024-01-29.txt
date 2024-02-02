@@ -427,3 +427,8 @@
 0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:45:13 +0900] "GET /member/js/scripts.js HTTP/1.1" 404 721
 0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:45:13 +0900] "GET /resources/assets/img/test4.png HTTP/1.1" 200 493292
 0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:45:13 +0900] "GET /resources/assets/favicon.ico HTTP/1.1" 200 23462
+0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:46:50 +0900] "GET /member/login.jsp HTTP/1.1" 200 5549
+0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:46:50 +0900] "GET /member/js/scripts.js HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:46:58 +0900] "GET /member/join.jsp HTTP/1.1" 200 18113
+0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:46:58 +0900] "GET /member/js/scripts.js HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [29/Jan/2024:17:46:58 +0900] "GET /resources/css/member/join.css HTTP/1.1" 304 -

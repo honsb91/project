@@ -1,10 +1,14 @@
 package kr.co.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.hospital.model.PatientVO;
 import kr.hospital.service.PatientService;
@@ -47,7 +51,34 @@ public class PatientController {
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public void loginGET() {
 		
+	}
+	
+	// 로그인
+	@RequestMapping(value = "login.do", method=RequestMethod.POST)
+	public String loginPOST(HttpServletRequest request, PatientVO patient, RedirectAttributes rttr) throws Exception{
 		
+		HttpSession session = request.getSession();
+		PatientVO pvo = patientService.patientLogin(patient);
+		
+		if(pvo == null) {
+			int result = 0;
+			rttr.addFlashAttribute("result", result);
+			return "redirect:/member/login.jsp";
+		}
+		
+		session.setAttribute("patient", pvo);
+		
+		return "redirect:/main";
+	}
+	
+	//로그아웃
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+	public String logoutMainGET(HttpServletRequest request) throws Exception{
+	        
+	   HttpSession session = request.getSession();
+	   session.invalidate();
+	        
+	   return "redirect:/main";        
 	}
 	
 }

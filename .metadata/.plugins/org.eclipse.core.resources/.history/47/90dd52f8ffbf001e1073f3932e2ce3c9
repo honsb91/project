@@ -1,0 +1,14 @@
+package kr.hospital.mapper;
+
+import kr.hospital.model.AdminVO;
+import kr.hospital.model.PatientVO;
+
+public interface AdminMapper {
+	
+	// 로그인
+	public PatientVO patientLogin(PatientVO patient);
+	
+	// 관리자 로그인
+	public AdminVO adminLogin(AdminVO admin);
+
+}

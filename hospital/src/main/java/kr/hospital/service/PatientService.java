@@ -9,5 +9,8 @@ public interface PatientService {
 	
 	// 아이디 중복검사
 	public int idCheck(String patient_id) throws Exception;
+	
+	// 로그인
+	public PatientVO patientLogin(PatientVO patient) throws Exception;
 
 }

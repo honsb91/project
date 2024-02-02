@@ -10,4 +10,7 @@ public interface PatientMapper {
 	// 아이디 중복검사 
 	public int idCheck(String patient_id);
 	
+	// 로그인
+	public PatientVO patientLogin(PatientVO patient);
+	
 }

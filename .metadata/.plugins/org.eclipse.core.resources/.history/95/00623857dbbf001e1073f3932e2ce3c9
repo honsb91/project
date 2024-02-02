@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+h2 {
+  margin-bottom: 10px;
+}
+#cement {
+  width: 940px;
+  margin: 20px auto;
+  height: 55%;
+}
+
+#list{
+	border-top: 2px solid #000;
+}

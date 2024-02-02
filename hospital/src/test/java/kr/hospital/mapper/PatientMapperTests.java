@@ -32,12 +32,32 @@ public class PatientMapperTests {
 	 */
 	
 	// 아이디 중복검사 테스트
+//	@Test
+//	public void patientIdChk() throws Exception{
+//		String id = "test";
+//		String id2 = "ttttttt";
+//		patientMapper.idCheck(id);
+//		patientMapper.idCheck(id2);
+//	}
+	
+	// 로그인 테스트
 	@Test
-	public void patientIdChk() throws Exception{
-		String id = "test";
-		String id2 = "ttttttt";
-		patientMapper.idCheck(id);
-		patientMapper.idCheck(id2);
+	public void patientLogin() throws Exception{
+		
+		PatientVO patient = new PatientVO();
+		
+		// 올바른 아이디 비번 입력의 경우
+//		patient.setPatient_id("test11");
+//		patient.setPatient_pw("test");
+		
+		// 아이디 비번이 틀린경우
+		patient.setPatient_id("etete");
+		patient.setPatient_pw("qetet");
+		
+		patientMapper.patientLogin(patient);
+		System.out.println("결과 값 : " + patientMapper.patientLogin(patient));
+		
+		
 	}
 
 }

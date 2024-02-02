@@ -1,0 +1,8 @@
+package kr.hospital.model;
+
+public class NoticeVO {
+	
+	//공지사항 번호
+	private int 
+
+}

@@ -1,0 +1,5 @@
+package kr.hospital.interceptor;
+
+public class AdminInterceptor {
+
+}

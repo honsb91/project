@@ -23,4 +23,10 @@ public class PatientServiceImpl implements PatientService{
 	public int idCheck(String patient_id) throws Exception {
 		return patientMapper.idCheck(patient_id);
 	}
+
+	// 로그인
+	@Override
+	public PatientVO patientLogin(PatientVO patient) throws Exception {
+		return patientMapper.patientLogin(patient);
+	}
 }

@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공지사항</title>
+</head>
+<%@ include file="/include/header.jsp"%>
+<body>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>작성자</th>
+				<th>날짜</th>
+				<th>조회수</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>165</td>
+				<td>이게 맞는부분인거냐</td>
+				<td>기기기</td>
+				<td>2016-12-02</td>
+				<td>2</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<%@ include file="/include/footer.jsp"%>
+</html>

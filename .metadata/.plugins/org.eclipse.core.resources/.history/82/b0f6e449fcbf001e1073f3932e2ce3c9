@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="kr.hospital.mapper.AdminMapper">
+<!-- 로그인 -->
+	<select id="patientLogin" resultType="kr.hospital.model.PatientVO">
+		select patient_id, patient_pw
+		from patient
+		where patient_id = #{patient_id} and patient_pw = #{patient_pw}
+	</select>
