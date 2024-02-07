@@ -1,7 +1,0 @@
-@charset "UTF-8";
-
-.announcement-header {
-font-size: 20px; /* 헤더 글자 크기 */
-font-weight: bold; /* 헤더 글자 굵기 */
-margin-bottom: 15px; /* 헤더 아래 여백 */
-}

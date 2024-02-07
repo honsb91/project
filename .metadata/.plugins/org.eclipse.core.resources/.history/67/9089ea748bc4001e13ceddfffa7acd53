@@ -1,0 +1,28 @@
+package kr.co.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.hospital.service.NoticeService;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	/* 게시판 목록 페이지 접속 */
+    @GetMapping("/notice")
+    // => @RequestMapping(value="list", method=RequestMethod.GET)
+    public void boardListGET(Model model) {
+        
+        
+        model.addAttribute("notice", noticeService.getList());
+        
+    }
+}

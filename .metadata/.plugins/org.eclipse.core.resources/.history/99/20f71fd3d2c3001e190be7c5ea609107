@@ -1,0 +1,59 @@
+package kr.hospital.mapper;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
+public class NoticeMapperTest {
+
+	@Autowired
+	private NoticeMapper noticeMapper;
+	
+	// 공지사항 등록 테스트
+//	@Test
+//	public void notice() throws Exception{
+//		
+//		NoticeVO notice = new NoticeVO();
+//		
+//		Date date = new Date();
+//		
+//		notice.setNotice_no(0);
+//		notice.setNotice_title("오늘의 뉴스");
+//		notice.setNotice_content("오늘의 뉴스소식입니다.");
+//		notice.setNotice_writer("honsb");
+//		notice.setNotice_regdate(date);
+//		
+//		
+//		noticeMapper.registr(notice);
+//	}
+	
+	// 공지사항 목록 테스트
+	/* 게시판 목록 테스트 */
+    @Test
+    public void testGetList() {
+        
+        
+        List list = noticeMapper.getList();
+       /* 일반적 for문 */
+        for(int i = 0; i < list.size();i++) {
+            log.info("" + list.get(i));
+        }
+//        
+//       /* foreach문(향상된 for문) */
+//        for(Object a : list) {
+//            log.info("" + a);
+//        }
+        
+//       /* foreach문 & 람다식 */
+//        list.forEach(notice -> log.info("" + notice));
+        
+    }
+}

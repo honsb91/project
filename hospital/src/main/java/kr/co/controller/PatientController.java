@@ -54,7 +54,7 @@ public class PatientController {
 	}
 	
 	// 로그인
-	@RequestMapping(value = "login.do", method=RequestMethod.POST)
+	@RequestMapping(value = "login", method=RequestMethod.POST)
 	public String loginPOST(HttpServletRequest request, PatientVO patient, RedirectAttributes rttr) throws Exception{
 		
 		HttpSession session = request.getSession();

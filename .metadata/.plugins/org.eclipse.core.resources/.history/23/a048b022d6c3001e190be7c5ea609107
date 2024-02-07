@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.btn_section{
+	margin-left:69%;
+}
+
+#registrBtn{
+	font-size:20px;
+}
+</style>
+</head>
+<%@ include file="/include/header.jsp"%>
+<body>
+<h1 class="text-center mb-5">공지사항 관리</h1>
+<form action="/admin/notice_registr" method="post" id="registrForm">
+<c:if test="${not empty admin}">
+<div class="btn_section">
+	<button id="registrBtn" class="btn registr_btn">공지사항 등록</button>
+</div> 
+</c:if>
+
+<table class="table tb-list text-center">
+    <colgroup>
+        <col width='80px'>
+        <col>
+        <col width='120px'>
+        <col width='140px'>
+        <col width='120px'>
+    </colgroup>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일자</th>
+        <th>첨부파일</th>
+    </tr>
+
+    <c:if test="${empty page.list}">
+        <tr>
+            <td colspan="5">공지 글이 없습니다</td>
+        </tr>
+    </c:if>
+   </table>
+</form>
+</body>
+<%@ include file="/include/footer.jsp"%>
+<script>
+ 
+/* 등록 버튼 */
+$("#registrBtn").click(function(){    
+    $("#registrForm").submit();
+});
+ 
+/* 취소 버튼 */
+$("#cancelBtn").click(function(){
+    location.href="/admin/notice"
+});
+
+$(document).ready(function(){
+    
+	let result = '<c:out value="${registr_result}"/>';
+    
+    checkResult(result);
+    
+    function checkResult(result){
+        
+        if(result === ''){
+            return;
+        }
+        alert("공지사항'${registr_result}' 을 등록하였습니다.");
+    }
+});
+ 
+</script>
+</html>

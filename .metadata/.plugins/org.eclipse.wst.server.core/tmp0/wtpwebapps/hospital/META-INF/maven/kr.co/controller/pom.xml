@@ -182,6 +182,13 @@
     		<artifactId>spring-webmvc</artifactId>
     		<version>${org.springframework-version}</version>
 		</dependency>
+		
+		<!-- Oracle-지원되지-않는-문자-집합클래스-경로에-orai18njar-추가 -->
+		<dependency>
+			<groupId>com.oracle.ojdbc</groupId>
+			<artifactId>orai18n</artifactId>
+			<version>19.3.0.0</version>
+		</dependency>
 
 	</dependencies>
 	<build>

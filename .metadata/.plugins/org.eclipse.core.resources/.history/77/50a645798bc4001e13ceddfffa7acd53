@@ -1,0 +1,33 @@
+package kr.co.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kr.hospital.service.NoticeService;
+
+@Controller
+@RequestMapping("/board/*")
+public class BoardController {
+
+	
+	@Autowired
+	private NoticeService noticeService;
+	
+	@GetMapping("/notice")
+    // => @RequestMapping(value="list", method=RequestMethod.GET)
+    public void noticeGET() {
+        
+        
+    }
+    
+    @GetMapping("/enroll")
+    // => @RequestMapping(value="enroll", method=RequestMethod.GET)
+    public void boardEnrollGET() {
+        
+        log.info("게시판 등록 페이지 진입");
+        
+    }
+}
